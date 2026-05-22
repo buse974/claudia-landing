@@ -18,18 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && reveals.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    reveals.forEach((el) => io.observe(el));
-  } else {
-    reveals.forEach((el) => el.classList.add('is-visible'));
+  const sticker = document.querySelector('.floating-sticker');
+  if (sticker) {
+    const onScroll = () => {
+      if (window.scrollY > window.innerHeight * 0.8) {
+        sticker.classList.add('is-visible');
+      } else {
+        sticker.classList.remove('is-visible');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 });
