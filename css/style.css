@@ -979,6 +979,36 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 700;
 }
 
+/* ============ VERSION SWITCHER ============ */
+.version-switcher {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 95;
+  display: flex;
+  background: rgba(10, 6, 8, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(244, 168, 193, 0.2);
+  border-radius: 999px;
+  padding: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  box-shadow: 0 8px 24px rgba(10, 6, 8, 0.35);
+}
+.version-switcher .vs-btn {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  color: rgba(251, 247, 248, 0.7);
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+.version-switcher .vs-btn:hover { color: var(--paper); }
+.version-switcher .vs-btn.is-active {
+  background: var(--rose-hot);
+  color: var(--black);
+}
+
 /* ============ FOOTER ============ */
 .site-footer {
   background: var(--black);
