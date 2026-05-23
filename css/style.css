@@ -296,7 +296,7 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.78rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: var(--paper);
   margin-bottom: 1.5rem;
   font-weight: 500;
 }
