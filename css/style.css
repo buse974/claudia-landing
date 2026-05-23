@@ -170,56 +170,99 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: center;
   padding: 6rem 2rem 3rem;
   background:
-    radial-gradient(ellipse at top right, rgba(232, 62, 140, 0.22) 0%, transparent 55%),
-    radial-gradient(ellipse at bottom left, rgba(244, 168, 193, 0.14) 0%, transparent 55%),
-    var(--black);
+    radial-gradient(ellipse 70% 55% at 50% 45%, rgba(232, 95, 158, 0.35) 0%, rgba(160, 50, 110, 0.18) 35%, transparent 70%),
+    radial-gradient(circle at 50% 110%, rgba(232, 62, 140, 0.12) 0%, transparent 60%),
+    linear-gradient(180deg, #1a0d18 0%, #0c0610 55%, #050307 100%);
   color: var(--paper);
   position: relative;
   overflow: hidden;
 }
 
-.hero-leopard {
+.hero-spotlight {
   position: absolute;
-  top: -15%;
-  right: -15%;
-  width: 75vw;
-  height: 75vw;
-  max-width: 1000px;
-  max-height: 1000px;
-  background-image: var(--leopard-pattern);
-  background-size: 200px 200px;
-  opacity: 0.28;
-  mix-blend-mode: screen;
-  filter: hue-rotate(295deg) saturate(1.8) brightness(1.1);
-  border-radius: 50%;
-  mask-image: radial-gradient(circle at center, black 35%, transparent 75%);
-  -webkit-mask-image: radial-gradient(circle at center, black 35%, transparent 75%);
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  height: 90vw;
+  max-width: 1100px;
+  max-height: 1100px;
+  transform: translate(-50%, -55%);
+  background:
+    radial-gradient(circle at center,
+      rgba(248, 200, 220, 0.16) 0%,
+      rgba(232, 95, 158, 0.10) 30%,
+      transparent 65%);
+  filter: blur(20px);
   pointer-events: none;
-  animation: drift 22s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
+  z-index: 0;
 }
 
-.hero-leopard-2 {
+.hero-orb {
   position: absolute;
-  bottom: -20%;
-  left: -15%;
-  width: 60vw;
-  height: 60vw;
-  max-width: 800px;
-  max-height: 800px;
-  background-image: var(--leopard-pattern);
-  background-size: 180px 180px;
-  opacity: 0.22;
-  mix-blend-mode: screen;
-  filter: hue-rotate(305deg) saturate(2) brightness(1.1);
   border-radius: 50%;
-  mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
-  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
   pointer-events: none;
-  animation: drift 28s ease-in-out infinite alternate-reverse;
+  filter: blur(60px);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+  z-index: 0;
 }
-@keyframes drift {
-  from { transform: translate(0, 0) rotate(0deg); }
-  to { transform: translate(-30px, 20px) rotate(8deg); }
+.hero-orb--1 {
+  top: -10%;
+  left: -8%;
+  width: 38vw;
+  height: 38vw;
+  max-width: 560px;
+  max-height: 560px;
+  background: radial-gradient(circle at 35% 35%, #ff8bbf 0%, #d8678f 45%, transparent 70%);
+  animation: float-orb 18s ease-in-out infinite alternate;
+}
+.hero-orb--2 {
+  bottom: -12%;
+  right: -10%;
+  width: 42vw;
+  height: 42vw;
+  max-width: 640px;
+  max-height: 640px;
+  background: radial-gradient(circle at 60% 40%, #ffa8d0 0%, #c84c87 50%, transparent 72%);
+  animation: float-orb 24s ease-in-out infinite alternate-reverse;
+}
+.hero-orb--3 {
+  top: 18%;
+  right: 8%;
+  width: 22vw;
+  height: 22vw;
+  max-width: 360px;
+  max-height: 360px;
+  background: radial-gradient(circle at 50% 50%, #ffd5e6 0%, #f0a3c4 55%, transparent 75%);
+  opacity: 0.55;
+  filter: blur(48px);
+  animation: float-orb-soft 14s ease-in-out infinite alternate;
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 110% 80% at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.55) 100%);
+  z-index: 0;
+}
+
+@keyframes float-orb {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(40px, -30px) scale(1.08); }
+}
+@keyframes float-orb-soft {
+  from { transform: translate(0, 0) scale(0.95); opacity: 0.45; }
+  to   { transform: translate(-25px, 35px) scale(1.05); opacity: 0.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb,
+  .hero-orb--1,
+  .hero-orb--2,
+  .hero-orb--3 { animation: none; }
 }
 
 .hero-content {
@@ -1015,7 +1058,9 @@ button { font-family: inherit; cursor: pointer; }
   .hero-sub { font-size: 1rem; margin-bottom: 2rem; }
   .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 1.2rem; }
   .hero-cta { gap: 0.7rem; }
-  .hero-leopard { width: 80vw; height: 80vw; opacity: 0.06; }
+  .hero-orb { filter: blur(40px); }
+  .hero-orb--1, .hero-orb--2 { width: 70vw; height: 70vw; }
+  .hero-orb--3 { width: 40vw; height: 40vw; }
 
   .section, .section-formation { padding: 5rem 1.3rem; }
   .section-head { margin-bottom: 3rem; }
