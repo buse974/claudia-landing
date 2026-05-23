@@ -273,17 +273,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ========= TRANSITIONS DOUCES ENTRE SECTIONS ========= */
-.section-formation::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 140px;
-  background: linear-gradient(180deg, transparent 0%, var(--black) 100%);
-  pointer-events: none;
-  z-index: 0;
-}
 .section-alt::after {
   content: '';
   position: absolute;
@@ -701,9 +690,36 @@ button { font-family: inherit; cursor: pointer; }
   font-style: italic;
   margin-top: 1.5rem;
 }
+.services-combo {
+  text-align: center;
+  margin-top: 2.8rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink, #1a0d18);
+}
+.services-combo strong {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--rose-deep);
+}
+.services-combo a {
+  display: inline-block;
+  margin-left: 0.4rem;
+  color: var(--rose-deep);
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  transition: color 0.25s ease;
+}
+.services-combo a:hover { color: var(--rose-hot); }
 .services-cta {
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: 1.6rem;
 }
 
 /* ========= GALERIE (avec vraies images) ========= */
