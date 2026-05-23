@@ -8,6 +8,9 @@
   --rose-pale: #fde7ee;
   --gold: #d9b282;
   --gold-deep: #b8915f;
+  --sand: #f6ead8;
+  --sand-warm: #f3dfc6;
+  --peach: #fce5d4;
   --leopard-base: #f6d8a4;
   --leopard-spot: #6b3a1a;
   --paper: #fbf7f8;
@@ -24,7 +27,9 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--sans);
   color: var(--ink);
-  background: var(--paper);
+  background:
+    linear-gradient(180deg, var(--paper) 0%, var(--peach) 50%, var(--sand) 100%);
+  background-attachment: fixed;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -351,15 +356,55 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 auto;
   position: relative;
 }
+
+/* Accents beach diffus sur sections claires */
+#prestations::before,
+#apropos::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  right: -10%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(244, 168, 193, 0.25) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(20px);
+}
+#prestations::after,
+#apropos::after {
+  content: '';
+  position: absolute;
+  bottom: 5%;
+  left: -8%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(217, 178, 130, 0.2) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(25px);
+}
+#prestations > *,
+#apropos > * { position: relative; z-index: 1; }
+
 .section-alt {
-  background: linear-gradient(180deg, var(--paper) 0%, var(--rose-pale) 100%);
+  background:
+    radial-gradient(ellipse 80% 60% at top right, rgba(232, 62, 140, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at bottom left, rgba(217, 178, 130, 0.15) 0%, transparent 60%),
+    linear-gradient(180deg, var(--peach) 0%, var(--rose-pale) 100%);
   max-width: none;
   margin: 0;
+  position: relative;
+  overflow: hidden;
 }
 .section-alt > * {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 1;
 }
 .section-dark {
   background: var(--black);
@@ -625,7 +670,10 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ========= FORMATION ========= */
 .section-formation {
-  background: linear-gradient(180deg, var(--paper) 0%, #f8eee4 100%);
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 0%, rgba(244, 168, 193, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 100% 100%, rgba(217, 178, 130, 0.25) 0%, transparent 55%),
+    linear-gradient(180deg, var(--sand) 0%, var(--sand-warm) 100%);
   max-width: none;
   margin: 0;
   padding: 7rem 2rem;
