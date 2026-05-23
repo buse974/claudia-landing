@@ -272,6 +272,41 @@ button { font-family: inherit; cursor: pointer; }
   .hero-orb--2 { animation: none; }
 }
 
+/* ========= TRANSITIONS DOUCES ENTRE SECTIONS ========= */
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+  background: linear-gradient(180deg, transparent 0%, var(--paper) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.section-formation::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+  background: linear-gradient(180deg, transparent 0%, var(--black) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.section-alt::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  background: linear-gradient(180deg, transparent 0%, var(--paper) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-content {
   max-width: 920px;
   text-align: center;
@@ -783,6 +818,7 @@ button { font-family: inherit; cursor: pointer; }
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  z-index: 1;
 }
 .formation-leopard {
   position: absolute;
