@@ -273,17 +273,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ========= TRANSITIONS DOUCES ENTRE SECTIONS ========= */
-.hero::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 140px;
-  background: linear-gradient(180deg, transparent 0%, var(--paper) 100%);
-  pointer-events: none;
-  z-index: 0;
-}
 .section-formation::after {
   content: '';
   position: absolute;
@@ -696,6 +685,15 @@ button { font-family: inherit; cursor: pointer; }
   font-family: var(--serif);
   margin-left: 0.3rem;
 }
+.service-price a {
+  color: var(--rose-deep);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  transition: color 0.25s ease;
+}
+.service-price a:hover { color: var(--rose-hot); }
 .services-note {
   text-align: center;
   color: var(--muted);
