@@ -861,6 +861,18 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ========= RESPONSIVE ========= */
+
+/* Tablet & medium */
+@media (max-width: 1024px) {
+  .section { padding: 6rem 1.8rem; }
+  .section-formation { padding: 6rem 1.8rem; }
+  .hero-content { padding: 0 1rem; }
+  .modules-grid { gap: 1.2rem; }
+  .module-desc { min-height: auto; }
+  .service-desc { min-height: auto; }
+}
+
+/* Tablet portrait → mobile */
 @media (max-width: 880px) {
   .nav-toggle { display: flex; }
   .nav-links {
@@ -868,39 +880,93 @@ button { font-family: inherit; cursor: pointer; }
     top: 0;
     right: 0;
     height: 100vh;
-    width: 82%;
-    max-width: 320px;
+    width: 85%;
+    max-width: 340px;
     background: var(--black);
     flex-direction: column;
-    padding: 5rem 2rem 2rem;
+    padding: 5rem 1.8rem 2rem;
     gap: 1.4rem;
     transform: translateX(100%);
     transition: transform 0.4s ease;
     border-left: 1px solid rgba(217, 178, 130, 0.15);
     align-items: flex-start;
+    overflow-y: auto;
   }
   .nav-links.is-open { transform: translateX(0); }
-  .nav-links a { font-size: 1.05rem; }
+  .nav-links a { font-size: 1.1rem; }
+  .nav-links .nav-cta { padding: 0.6rem 0; }
 
-  .site-header { padding: 0.85rem 1.5rem; }
-  .brand-name { font-size: 1.2rem; }
-  .brand-tag { font-size: 0.55rem; }
+  .site-header { padding: 0.85rem 1.3rem; }
+  .brand-name { font-size: 1.15rem; }
+  .brand-tag { font-size: 0.55rem; letter-spacing: 0.28em; }
 
-  .hero { padding: 5rem 1.5rem 2rem; }
+  .hero { padding: 6rem 1.3rem 2rem; }
+  .hero-sub { font-size: 1rem; margin-bottom: 2rem; }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 1.2rem; }
+  .hero-cta { gap: 0.7rem; }
+  .hero-leopard { width: 80vw; height: 80vw; opacity: 0.06; }
 
-  .section, .section-formation { padding: 5rem 1.5rem; }
+  .section, .section-formation { padding: 5rem 1.3rem; }
+  .section-head { margin-bottom: 3rem; }
 
   .about {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
   .about-photo { max-width: 280px; }
+  .about-text p { font-size: 1rem; }
+
+  .module-card { padding: 1.8rem 1.5rem; }
+  .module-name { font-size: 1.35rem; }
+
+  .service-card { padding: 1.8rem 1.5rem; }
+  .service-name { font-size: 1.45rem; }
+
+  .contact-card { padding: 1.8rem 1.4rem; }
+  .contact-title { font-size: 1.3rem; }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.2rem;
     text-align: center;
   }
+}
+
+/* Small phone */
+@media (max-width: 540px) {
+  .site-header { padding: 0.75rem 1.1rem; }
+  .brand-tag { display: none; }
+
+  .hero { padding: 5.5rem 1.2rem 6rem; min-height: auto; }
+  .hero-title { letter-spacing: -0.04em; }
+  .hero-sub { font-size: 0.95rem; }
+  .hero-cta {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+  .hero-scroll { display: none; }
+
+  .section, .section-formation { padding: 4rem 1.1rem; }
+  .section-head { margin-bottom: 2.5rem; }
+
+  .services-grid, .modules-grid, .contact-grid, .gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-photo { max-width: 240px; }
+  .about-photo-leopard { width: 50%; height: 50%; }
+
+  .btn { padding: 0.85rem 1.6rem; font-size: 0.8rem; letter-spacing: 0.08em; }
+  .btn-xl { padding: 1.05rem 2rem; font-size: 0.88rem; }
+
+  .contact-cta-main { margin-bottom: 3rem; }
+
+  .formation-leopard { width: 70vw; height: 70vw; opacity: 0.06; }
+
+  .site-footer { padding: 3rem 1.2rem 1.2rem; }
 }
 
 /* ========= VERSION SWITCHER ========= */
