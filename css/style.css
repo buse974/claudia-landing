@@ -765,6 +765,16 @@ button { font-family: inherit; cursor: pointer; }
 }
 .gallery-item:hover { transform: translateY(-4px); }
 .gallery-item:hover img { transform: scale(1.06); filter: brightness(1.04); }
+
+.gallery .gallery-item:nth-child(4) {
+  background: linear-gradient(135deg, #1a0d18 0%, #321524 50%, #0c0610 100%);
+}
+.gallery .gallery-item:nth-child(4) img {
+  transform: scale(0.78);
+}
+.gallery .gallery-item:nth-child(4):hover img {
+  transform: scale(0.84);
+}
 .gallery-item:hover::after { opacity: 1; transform: translateY(0); }
 .gallery-cta { text-align: center; }
 
@@ -791,19 +801,6 @@ button { font-family: inherit; cursor: pointer; }
   position: relative;
   z-index: 2;
   box-shadow: 0 14px 40px rgba(10, 6, 8, 0.12);
-}
-.about-photo-leopard {
-  position: absolute;
-  top: -8%;
-  right: -10%;
-  width: 55%;
-  height: 55%;
-  background-image: var(--leopard-pattern);
-  background-size: 200px 200px;
-  border-radius: 50%;
-  z-index: 1;
-  opacity: 0.65;
-  transform: rotate(15deg);
 }
 .about-text p {
   margin-bottom: 1.2rem;
@@ -1152,7 +1149,6 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .about-photo { max-width: 240px; }
-  .about-photo-leopard { width: 50%; height: 50%; }
 
   .btn { padding: 0.85rem 1.6rem; font-size: 0.8rem; letter-spacing: 0.08em; }
   .btn-xl { padding: 1.05rem 2rem; font-size: 0.88rem; }
